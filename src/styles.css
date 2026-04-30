@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+  overflow-x: hidden;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+:root {
+  /* Light Theme Colors */
+  --bg-primary: #f0f4ff;
+  --bg-secondary: #ffffff;
+  --text-primary: #1a1a2e;
+  --text-secondary: #6c757d;
+  --accent-blue: #5865ff;
+  --accent-purple: #a259ff;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  /* --glass-bg: rgba(255, 255, 255, 0.25); */
+  /* --glass-border: rgba(255, 255, 255, 0.4); */
+  --shadow: rgba(2,6,23,0.35);
+  --input-bg: rgba(255, 255, 255, 0.9);
+  --border-color: rgba(88, 101, 255, 0.2);
+  --glass-bg: linear-gradient( rgba(255,255,255,0.06), rgba(255,255,255,0.03) );;
+--glass-border: rgba(255,255,255,0.08);;
+}
+
+.dark-theme {
+  /* Dark Theme Colors */
+   --bg-primary: #0b0b1a;
+  --bg-secondary: #141432;
+
+  --text-primary: #f1f1ff;
+  --text-secondary: #9aa0c3;
+
+  --accent-blue: #6b7dff;
+  --accent-purple: #b470ff;
+
+  --card-bg: rgba(26, 26, 63, 0.7);
+
+  --glass-bg: linear-gradient(
+    rgba(20, 20, 40, 0.85),
+    rgba(10, 10, 25, 0.75)
+  );
+
+  --glass-border: rgba(255,255,255,0.12);
+
+  --shadow: rgba(0, 0, 0, 0.6);
+
+  --input-bg: rgba(26, 26, 63, 0.9);
+  --border-color: rgba(107, 125, 255, 0.25);
+}

@@ -1,0 +1,389 @@
+<!-- Floating Social Sidebar -->
+<div class="social-sidebar">
+  <a href="https://github.com/ashinack" class="social-link"
+    ><fa-icon [icon]="faGithub"></fa-icon
+  ></a>
+  <a
+    href="https://www.linkedin.com/in/ashina-c-k-613b3122a/"
+    class="social-link"
+    ><fa-icon [icon]="faLinkedin"></fa-icon
+  ></a>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar glass">
+  <div class="logo">AS</div>
+  <ul class="nav-menu" [ngClass]="{ active: mobileMenuOpen }">
+    <li>
+      <a href="#home" class="nav-link active" (click)="closeMobileMenu()"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a href="#projects" class="nav-link" (click)="closeMobileMenu()"
+        >Projects</a
+      >
+    </li>
+    <li>
+      <a href="#about" class="nav-link" (click)="closeMobileMenu()">About</a>
+    </li>
+    <li>
+      <a href="#contact" class="nav-link" (click)="closeMobileMenu()"
+        >Contact</a
+      >
+    </li>
+  </ul>
+  <button class="theme-toggle-nav" (click)="toggleTheme()">
+    <fa-icon *ngIf="!isDark" [icon]="faSun"></fa-icon>
+    <fa-icon *ngIf="isDark" [icon]="faMoon"></fa-icon>
+  </button>
+  <div
+    class="hamburger"
+    [ngClass]="{ active: mobileMenuOpen }"
+    (click)="toggleMobileMenu()"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero parallax-section">
+  <div class="hero-bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+  <!-- <div class="both-container"> -->
+  <div class="container hero-content">
+    <div class="hero-left">
+      <div class="profile-image glass">
+        <img
+          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+          alt="Profile"
+        />
+        <div class="profile-ring"></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <h1 class="hero-title fade-in">
+        <span class="text-primary">I'm</span><br />
+        <span class="highlight">Ashina</span><br />
+        <span class="text-primary">C K</span>
+      </h1>
+      <p class="hero-description fade-in-delay">
+        I’m a Full Stack Developer with 3.7 years of experience building
+        end-to-end web applications. I work with Node.js, Express, and MySQL on
+        the backend, and Angular, Bootstrap, and Angular Material on the
+        frontend.
+      </p>
+      <div class="hero-buttons fade-in-delay-2">
+        <!-- <button class="btn btn-primary">
+          <i class="fas fa-telegram-plane"></i> Get project
+        </button> -->
+        <button class="btn btn-primary glass" (click)="downloadResume()">
+          Download Resume
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skills Section -->
+  <div class="skills-section">
+    <div class="skill-card glass">
+      <div class="skill-icon" style="background: white">
+        <!-- <span>Ps</span> -->
+        <img src="/angular.jpg" alt="Angular" width="40" />
+      </div>
+      <span class="text-primary">Angular</span>
+    </div>
+    <div class="skill-card glass">
+      <div class="skill-icon" style="background: white">
+        <img src="/nodejsnew.png" alt="Node.js" width="40" />
+      </div>
+      <span class="text-primary">Node.js</span>
+    </div>
+    <div class="skill-card glass">
+      <div class="skill-icon" style="background: white">
+        <img src="/mysql.png" alt="MySQL" width="40" />
+      </div>
+      <span class="text-primary">MySQL</span>
+    </div>
+    <div class="skill-card glass">
+      <div class="skill-icon" style="background: white">
+        <img src="/js.png" alt="JavaScript" width="40" />
+      </div>
+      <span class="text-primary">JavaScript</span>
+    </div>
+  </div>
+  <!-- </div> -->
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects parallax-section">
+  <div class="container">
+    <h2 class="section-title text-primary">Projects</h2>
+    <!-- <div class="project-filters">
+      <button class="filter-btn active">Story</button>
+      <button class="filter-btn">Post</button>
+      <button class="filter-btn">Banner</button>
+      <button class="filter-btn glass">Commercial</button>
+      <button class="filter-btn">Designer</button>
+      <button class="filter-btn">More</button>
+    </div> -->
+    <div class="projects-grid">
+      <div class="project-card glass">
+        <div class="project-image">
+          <img src="/image.png" alt="Project" />
+        </div>
+        <div class="project-info">
+          <h3 class="text-primary">Weather App</h3>
+          <div class="project-footer">
+            <button
+              class="btn btn-small btn-primary"
+              (click)="openDemo('weatherapp')"
+            >
+              Live Demo
+            </button>
+            <!-- <span class="project-price">120 minutes</span> -->
+          </div>
+        </div>
+      </div>
+      <div class="project-card glass">
+        <div class="project-image">
+          <img src="/calculator.png" alt="Project" />
+        </div>
+        <div class="project-info">
+          <h3 class="text-primary">Modern Calculator</h3>
+          <!-- <p>English courses</p> -->
+          <div class="project-footer">
+            <button
+              class="btn btn-small btn-primary"
+              (click)="openDemo('calculator')"
+            >
+              Live Demo
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="project-card glass">
+        <div class="project-image">
+          <img src="dashboard.png" alt="Project" />
+        </div>
+        <div class="project-info">
+          <h3 class="text-primary">Ai Powered Dashboard Analysis</h3>
+          <div class="project-footer">
+            <button
+              class="btn btn-small btn-primary"
+              (click)="openDemo('dashboard')"
+            >
+              Live Demo
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="project-card glass">
+        <div class="project-image">
+          <img src="/clone.png" alt="Project" />
+        </div>
+        <div class="project-info">
+          <h3 class="text-primary">Home page clone</h3>
+          <div class="project-footer">
+            <button
+              class="btn btn-small btn-primary"
+              (click)="openDemo('appleClone')"
+            >
+              Live Demo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about parallax-section">
+  <div class="about-bg-shapes">
+    <div class="shape shape-4"></div>
+  </div>
+  <div class="container about-content">
+    <div class="about-left">
+      <div class="about-tag glass">MASHHAD</div>
+      <h2 class="about-title">
+        <span class="text-primary"> I'm</span><br />
+        <span class="highlight">Alireza</span><br />
+        <span class="text-primary">Kavousy nejad</span>
+      </h2>
+      <ul class="about-list">
+        <li>
+          <i class="fas fa-map-marker-alt"></i> I was Born in Iran Mashhad
+        </li>
+        <li><i class="fas fa-calendar-alt"></i> I'm 20 years old</li>
+        <li>
+          <i class="fas fa-graduation-cap"></i> I have studied my university in
+          Pix-heart from 2019
+        </li>
+        <li>
+          <i class="fas fa-briefcase"></i> I am working with UI/UX designer web
+          developer and
+        </li>
+        <li>
+          <i class="fas fa-phone"></i> My phone number is Iran +989131207048
+        </li>
+      </ul>
+    </div>
+    <div class="about-right">
+      <img
+        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop"
+        alt="About Image"
+        class="about-image"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services parallax-section">
+  <div class="container">
+    <h2 class="section-title text-primary">Services</h2>
+    <div class="services-grid">
+      <div class="service-card glass">
+        <div class="service-icon">
+          <!-- <i class="fas fa-play-circle"></i> -->
+          <fa-icon [icon]="faPlayCircle"></fa-icon>
+        </div>
+        <h3 class="text-primary">Video Edit Service</h3>
+        <a href="#" class="service-link"
+          >View More
+          <fa-icon [icon]="faArrowRight"></fa-icon>
+        </a>
+      </div>
+      <div class="service-card glass">
+        <div class="service-icon">
+          <!-- <i class="fas fa-pencil-ruler"></i> -->
+          <fa-icon [icon]="faPencilRuler"></fa-icon>
+        </div>
+        <h3 class="text-primary">UI/Ux Designer</h3>
+        <a href="#" class="service-link"
+          >View More
+          <fa-icon [icon]="faArrowRight"></fa-icon>
+        </a>
+      </div>
+      <div class="service-card glass">
+        <div class="service-icon">
+          <!-- <i class="fas fa-code"></i> -->
+          <fa-icon [icon]="faCode"></fa-icon>
+        </div>
+        <h3 class="text-primary">Website Developer</h3>
+        <a href="#" class="service-link"
+          >View More
+          <fa-icon [icon]="faArrowRight"></fa-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Learning Section -->
+<section class="learning parallax-section">
+  <div class="container">
+    <h2 class="section-title">Learning</h2>
+    <div class="learning-grid">
+      <div class="learning-card glass">
+        <div class="learning-placeholder"></div>
+        <div class="learning-info">
+          <span class="learning-tag">After Effects & Photoshop</span>
+        </div>
+      </div>
+      <div class="learning-card glass">
+        <div class="learning-placeholder"></div>
+      </div>
+      <div class="learning-card glass">
+        <div class="learning-placeholder"></div>
+      </div>
+      <button class="learning-arrow glass">
+        <!-- <i class="fas fa-chevron-right"></i> -->
+        <fa-icon [icon]="faChevronRight"></fa-icon>
+      </button>
+    </div>
+    <div class="learning-grid learning-grid-2">
+      <div class="learning-card glass">
+        <div class="learning-placeholder"></div>
+        <div class="learning-info">
+          <span class="learning-tag">Website - Html & CSS</span>
+        </div>
+      </div>
+      <div class="learning-card glass">
+        <div class="learning-placeholder"></div>
+      </div>
+      <div class="learning-card glass">
+        <div class="learning-placeholder"></div>
+      </div>
+      <button class="learning-arrow glass">
+        <fa-icon [icon]="faChevronRight"></fa-icon>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact parallax-section">
+  <div class="container">
+    <h2 class="section-title text-primary">Contact Us</h2>
+    <div class="contact-content">
+      <div class="contact-left">
+        <h3 class="text-primary">Get in touch</h3>
+        <form class="contact-form">
+          <input type="text" placeholder="Name" class="form-input glass" />
+          <input type="email" placeholder="Email" class="form-input glass" />
+          <textarea
+            placeholder="Message"
+            rows="5"
+            class="form-input glass"
+          ></textarea>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="contact-right">
+        <div class="contact-item glass">
+          <!-- <i class="fas fa-map-marker-alt"></i> -->
+          <fa-icon [icon]="faMapMarkerAlt"></fa-icon>
+          <div>
+            <strong class="text-primary">Location</strong>
+            <p>Mashhad, Iran</p>
+          </div>
+        </div>
+        <div class="contact-item glass">
+          <!-- <i class="fas fa-phone"></i> -->
+          <fa-icon [icon]="faPhone"></fa-icon>
+          <div>
+            <strong class="text-primary">Phone</strong>
+            <p>+989131207048</p>
+          </div>
+        </div>
+        <div class="contact-item glass">
+          <!-- <i class="fas fa-envelope"></i> -->
+          <fa-icon [icon]="faEnvelope"></fa-icon>
+          <div>
+            <strong class="text-primary">Email</strong>
+            <p>info@example.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-social">
+    <a href="#" class="footer-link"><fa-icon [icon]="faInstagram"></fa-icon></a>
+    <a href="#" class="footer-link"><fa-icon [icon]="faWhatsapp"></fa-icon></a>
+    <a href="#" class="footer-link"
+      ><fa-icon [icon]="faTelegramBrand"></fa-icon
+    ></a>
+  </div>
+  <p>&copy; 2024 Alireza Kavousy nejad. All rights reserved.</p>
+</footer>

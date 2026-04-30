@@ -781,7 +781,7 @@ fa-icon {
 /* ===== SERVICES SECTION ===== */
 .services {
   padding: 100px 0;
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
 }
 
 .services-grid {
@@ -882,6 +882,17 @@ fa-icon {
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.1);
+  background-image: url('/signal.png');
+  background-size: cover;
+  background-position: center;
+}
+.learning-placeholder-micro{
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  background-image: url('/micron.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .learning-info {
@@ -1538,4 +1549,124 @@ fa-icon {
 }
 .project-card{
   height: fit-content;
+}
+
+/* work in progress */
+.timeline-wrapper {
+  position: relative;
+  padding-left: 50px; /* Space for the timeline line and dots */
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Space between cards */
+}
+
+/* The Vertical Line */
+.vertical-line {
+  position: absolute;
+  left: 19px; /* Centered under the 40px wide dot container */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #d1d5db; /* Light gray line color */
+  z-index: 1;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Dot Container */
+.dot-container {
+  position: absolute;
+  left: -50px;
+  width: 40px;
+  height: 100%;
+  display: flex;
+  align-items: center; /* Vertically centers the dot to the card */
+  justify-content: center;
+  z-index: 2;
+}
+
+/* The Outer Circle */
+.outer-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  border: 2px solid #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* The Colored Inner Glowing Dot */
+.inner-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+
+/* Short line connecting dot to card (optional based on image) */
+.horizontal-connector {
+  position: absolute;
+  left: 30px;
+  width: 15px;
+  height: 2px;
+  background-color: #d1d5db;
+}
+
+.content-placeholder {
+  width: 100%;
+  /* min-height: 100px; */
+  background: #5865FF;
+  border-radius: 12px;
+  padding: 30px;
+  color: white;
+  /* 1. Set the initial position to 0 */
+  transform: translateY(0);
+  
+  /* 2. Define the transition (Duration and Easing) */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.3s ease;
+  
+  /* 3. Hardware acceleration for smoother movement */
+  will-change: transform;
+}
+.content-placeholder:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(88, 101, 255, 0.4);
+}
+.experience-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.company-title{
+  display: flex;
+  flex-direction:row;
+}
+
+.content-placeholder ul {
+  /* This moves the bullets inside the padding area */
+  list-style-position: outside; 
+  margin-left: 20px; /* This gives space for the bullets to breathe */
+  padding: 0;
+  margin-top: 20px;
+}
+
+.content-placeholder li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Optional: Custom bullet style to match the UI in image_016699.jpg */
+.content-placeholder li::marker {
+  content: '—  '; /* Uses a dash instead of a circle for a sleeker look */
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: bold;
 }

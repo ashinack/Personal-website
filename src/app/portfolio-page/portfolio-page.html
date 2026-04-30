@@ -25,7 +25,9 @@
       >
     </li>
     <li>
-      <a href="#about" class="nav-link" (click)="closeMobileMenu()">About</a>
+      <a href="#about" class="nav-link" (click)="closeMobileMenu()"
+        >Experience</a
+      >
     </li>
     <li>
       <a href="#contact" class="nav-link" (click)="closeMobileMenu()"
@@ -205,41 +207,52 @@
 
 <!-- About Section -->
 <section id="about" class="about parallax-section">
-  <div class="about-bg-shapes">
-    <div class="shape shape-4"></div>
-  </div>
-  <div class="container about-content">
-    <div class="about-left">
-      <div class="about-tag glass">MASHHAD</div>
-      <h2 class="about-title">
-        <span class="text-primary"> I'm</span><br />
-        <span class="highlight">Alireza</span><br />
-        <span class="text-primary">Kavousy nejad</span>
-      </h2>
-      <ul class="about-list">
-        <li>
-          <i class="fas fa-map-marker-alt"></i> I was Born in Iran Mashhad
-        </li>
-        <li><i class="fas fa-calendar-alt"></i> I'm 20 years old</li>
-        <li>
-          <i class="fas fa-graduation-cap"></i> I have studied my university in
-          Pix-heart from 2019
-        </li>
-        <li>
-          <i class="fas fa-briefcase"></i> I am working with UI/UX designer web
-          developer and
-        </li>
-        <li>
-          <i class="fas fa-phone"></i> My phone number is Iran +989131207048
-        </li>
-      </ul>
-    </div>
-    <div class="about-right">
-      <img
-        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop"
-        alt="About Image"
-        class="about-image"
-      />
+  <div class="container">
+    <h2 class="section-title text-primary">Work Experience</h2>
+    <!-- Timeline Container -->
+    <div class="timeline-wrapper">
+      <!-- The Continuous Vertical Line -->
+      <div class="vertical-line"></div>
+
+      <!-- Timeline Items -->
+      <div class="timeline-item">
+        <!-- The Connector Dot -->
+        <div class="dot-container">
+          <div class="outer-dot">
+            <div class="inner-dot" style="background-color: #c084fc"></div>
+          </div>
+          <div class="horizontal-connector"></div>
+        </div>
+
+        <!-- Your Card Content goes here -->
+        <div class="glass content-placeholder">
+          <div class="experience-info">
+            <div class="company-title">
+              <h4>Full Stack Developer</h4>
+              <span> &nbsp;| Riota private limited</span>
+            </div>
+            <p>2022 - Present</p>
+          </div>
+          <ul>
+            <li>
+              Built and maintained REST APIs using Node.js and Express.js across
+              4+ production web portals
+            </li>
+            <li>
+              Developed dynamic Angular frontends with multi-theming,
+              multi-language support and Angular Material components
+            </li>
+            <li>
+              Designed and optimized MySQL schemas using Sequelize ORM for
+              high-performance data handling
+            </li>
+            <li>
+              Integrated frontend with RESTful APIs ensuring seamless UX and
+              collaborated in Agile teams using Git
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -251,36 +264,24 @@
     <div class="services-grid">
       <div class="service-card glass">
         <div class="service-icon">
-          <!-- <i class="fas fa-play-circle"></i> -->
-          <fa-icon [icon]="faPlayCircle"></fa-icon>
+          <!-- <i class="fas fa-code"></i> -->
+          <fa-icon [icon]="faCode"></fa-icon>
         </div>
-        <h3 class="text-primary">Video Edit Service</h3>
-        <a href="#" class="service-link"
-          >View More
-          <fa-icon [icon]="faArrowRight"></fa-icon>
-        </a>
+        <h3 class="text-primary">Web Application Development</h3>
       </div>
       <div class="service-card glass">
         <div class="service-icon">
           <!-- <i class="fas fa-pencil-ruler"></i> -->
           <fa-icon [icon]="faPencilRuler"></fa-icon>
         </div>
-        <h3 class="text-primary">UI/Ux Designer</h3>
-        <a href="#" class="service-link"
-          >View More
-          <fa-icon [icon]="faArrowRight"></fa-icon>
-        </a>
+        <h3 class="text-primary">UI/UX & Interactive Design</h3>
       </div>
       <div class="service-card glass">
         <div class="service-icon">
-          <!-- <i class="fas fa-code"></i> -->
-          <fa-icon [icon]="faCode"></fa-icon>
+          <!-- <i class="fas fa-play-circle"></i> -->
+          <fa-icon [icon]="faDatabase"></fa-icon>
         </div>
-        <h3 class="text-primary">Website Developer</h3>
-        <a href="#" class="service-link"
-          >View More
-          <fa-icon [icon]="faArrowRight"></fa-icon>
-        </a>
+        <h3 class="text-primary">Database Management & Architecture</h3>
       </div>
     </div>
   </div>
@@ -290,40 +291,23 @@
 <section class="learning parallax-section">
   <div class="container">
     <h2 class="section-title">Learning</h2>
-    <div class="learning-grid">
-      <div class="learning-card glass">
-        <div class="learning-placeholder"></div>
-        <div class="learning-info">
-          <span class="learning-tag">After Effects & Photoshop</span>
-        </div>
-      </div>
-      <div class="learning-card glass">
-        <div class="learning-placeholder"></div>
-      </div>
-      <div class="learning-card glass">
-        <div class="learning-placeholder"></div>
-      </div>
-      <button class="learning-arrow glass">
-        <!-- <i class="fas fa-chevron-right"></i> -->
-        <fa-icon [icon]="faChevronRight"></fa-icon>
-      </button>
-    </div>
+
     <div class="learning-grid learning-grid-2">
       <div class="learning-card glass">
         <div class="learning-placeholder"></div>
         <div class="learning-info">
-          <span class="learning-tag">Website - Html & CSS</span>
+          <span class="learning-tag">Angular & Modern Reactivity</span>
         </div>
       </div>
       <div class="learning-card glass">
-        <div class="learning-placeholder"></div>
+        <div class="learning-placeholder-micro"></div>
+        <div class="learning-info">
+          <span class="learning-tag">Microservices & RabbitMQ</span>
+        </div>
       </div>
-      <div class="learning-card glass">
+      <!-- <div class="learning-card glass">
         <div class="learning-placeholder"></div>
-      </div>
-      <button class="learning-arrow glass">
-        <fa-icon [icon]="faChevronRight"></fa-icon>
-      </button>
+      </div> -->
     </div>
   </div>
 </section>

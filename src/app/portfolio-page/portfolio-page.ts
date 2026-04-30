@@ -1,4 +1,4 @@
-import { Component, DOCUMENT, Inject, Renderer2 } from '@angular/core';
+import { Component, DOCUMENT, Inject, Renderer2, signal } from '@angular/core';
 import {
   FaIconLibrary,
   FontAwesomeModule,
@@ -17,6 +17,7 @@ import {
   faArrowRight,
   faChevronRight,
   faEnvelope,
+  faDatabase,
 } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -61,6 +62,7 @@ export class PortfolioPage {
   public faChevronRight = faChevronRight;
   public faEnvelope = faEnvelope;
   faLinkedin = faLinkedin;
+  faDatabase = faDatabase;
 
   public isDark = false;
   public mobileMenuOpen = false;
@@ -499,4 +501,40 @@ export class PortfolioPage {
         window.open('https://ashinack.github.io/angular_weather/', '_blank');
     }
   }
+
+  experiences = signal([
+    {
+      role: 'Lead Product Designer',
+      company: 'Studio 77',
+      period: '2021 - Present',
+      color: 'rgba(192, 132, 252, 0.6)', // Purple glow
+      description: [
+        'Lead creation of intuitive user interfaces for mobile & web apps.',
+        'Mentored junior designers and conducted design reviews.',
+        'Implemented Design System to ensure consistent user experience across products.',
+      ],
+    },
+    {
+      role: 'Senior UI/UX Designer',
+      company: 'Innovatech',
+      period: '2018 - 2021',
+      color: 'rgba(59, 130, 246, 0.6)', // Blue glow
+      description: [
+        'Designed and validated features for a market-leading SaaS platform.',
+        'Conducted user research and usability testing to iterate on designs.',
+        'Collaborated with cross-functional teams to define and deliver features.',
+      ],
+    },
+    {
+      role: 'UI/UX Designer',
+      company: 'Creative Solutions',
+      period: '2016 - 2018',
+      color: 'rgba(52, 211, 153, 0.6)', // Green glow
+      description: [
+        'Developed concepts, wireframes, and prototypes for diverse clients.',
+        'Worked closely with developers to implement pixel-perfect designs.',
+        'Translated business requirements into compelling user experiences.',
+      ],
+    },
+  ]);
 }

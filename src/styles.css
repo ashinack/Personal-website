@@ -67,3 +67,8 @@ body {
   --input-bg: rgba(26, 26, 63, 0.9);
   --border-color: rgba(107, 125, 255, 0.25);
 }
+/* Success */
+.toast-success {
+  background-color: #5865FF !important;
+  color: #fff !important;
+}

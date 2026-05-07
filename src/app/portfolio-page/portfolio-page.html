@@ -61,10 +61,7 @@
   <div class="container hero-content">
     <div class="hero-left">
       <div class="profile-image glass">
-        <img
-          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
-          alt="Profile"
-        />
+        <img src="/Ashina.jpeg" alt="Profile" />
         <div class="profile-ring"></div>
       </div>
     </div>
@@ -319,13 +316,24 @@
     <div class="contact-content">
       <div class="contact-left">
         <h3 class="text-primary">Get in touch</h3>
-        <form class="contact-form">
-          <input type="text" placeholder="Name" class="form-input glass" />
-          <input type="email" placeholder="Email" class="form-input glass" />
+        <form class="contact-form" (submit)="sendEmail($event)">
+          <input
+            type="text"
+            placeholder="Name"
+            class="form-input glass"
+            name="name"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            class="form-input glass"
+            name="email"
+          />
           <textarea
             placeholder="Message"
             rows="5"
             class="form-input glass"
+            name="message"
           ></textarea>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -336,7 +344,7 @@
           <fa-icon [icon]="faMapMarkerAlt"></fa-icon>
           <div>
             <strong class="text-primary">Location</strong>
-            <p>Mashhad, Iran</p>
+            <p>Chennai, Tamil nadu</p>
           </div>
         </div>
         <div class="contact-item glass">
@@ -344,7 +352,7 @@
           <fa-icon [icon]="faPhone"></fa-icon>
           <div>
             <strong class="text-primary">Phone</strong>
-            <p>+989131207048</p>
+            <p>+91 9061516054</p>
           </div>
         </div>
         <div class="contact-item glass">
@@ -352,7 +360,7 @@
           <fa-icon [icon]="faEnvelope"></fa-icon>
           <div>
             <strong class="text-primary">Email</strong>
-            <p>info@example.com</p>
+            <p>ashinack1999@gmail.com</p>
           </div>
         </div>
       </div>
@@ -369,5 +377,5 @@
       ><fa-icon [icon]="faTelegramBrand"></fa-icon
     ></a>
   </div>
-  <p>&copy; 2024 Alireza Kavousy nejad. All rights reserved.</p>
 </footer>
+<p>&copy; 2026 Ashina Ck</p>

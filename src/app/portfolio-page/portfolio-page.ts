@@ -30,7 +30,8 @@ import {
   faTelegramPlane,
 } from '@fortawesome/free-brands-svg-icons';
 import { CommonModule } from '@angular/common';
-
+import emailjs from 'emailjs-com';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-portfolio-page',
   imports: [CommonModule, FontAwesomeModule],
@@ -68,6 +69,7 @@ export class PortfolioPage {
   public mobileMenuOpen = false;
 
   constructor(
+    private toastr: ToastrService,
     private renderer: Renderer2,
     @Inject(DOCUMENT) private doc: Document,
     private library: FaIconLibrary,
@@ -109,7 +111,7 @@ export class PortfolioPage {
     this.attachMouseMoveParallax();
     this.initCursorFollow();
     this.initRippleEffect();
-    this.initFormHandler();
+    // this.initFormHandler();
     this.fadeInOnLoad();
   }
 
@@ -433,31 +435,31 @@ export class PortfolioPage {
   // -------------------------
   // Simple form handler
   // -------------------------
-  private initFormHandler(): void {
-    const contactForm =
-      this.doc.querySelector<HTMLFormElement>('.contact-form');
-    if (!contactForm) return;
-    const un = this.renderer.listen(contactForm, 'submit', (e: Event) => {
-      e.preventDefault();
-      const nameEl =
-        contactForm.querySelector<HTMLInputElement>('input[type="text"]');
-      const emailEl = contactForm.querySelector<HTMLInputElement>(
-        'input[type="email"]',
-      );
-      const messageEl =
-        contactForm.querySelector<HTMLTextAreaElement>('textarea');
-      const name = nameEl?.value || '';
-      const email = emailEl?.value || '';
-      const message = messageEl?.value || '';
-      if (name && email && message) {
-        alert('Thank you for your message! I will get back to you soon.');
-        contactForm.reset();
-      } else {
-        alert('Please fill in all fields.');
-      }
-    });
-    this.listeners.push(un);
-  }
+  // private initFormHandler(): void {
+  //   const contactForm =
+  //     this.doc.querySelector<HTMLFormElement>('.contact-form');
+  //   if (!contactForm) return;
+  //   const un = this.renderer.listen(contactForm, 'submit', (e: Event) => {
+  //     e.preventDefault();
+  //     const nameEl =
+  //       contactForm.querySelector<HTMLInputElement>('input[type="text"]');
+  //     const emailEl = contactForm.querySelector<HTMLInputElement>(
+  //       'input[type="email"]',
+  //     );
+  //     const messageEl =
+  //       contactForm.querySelector<HTMLTextAreaElement>('textarea');
+  //     const name = nameEl?.value || '';
+  //     const email = emailEl?.value || '';
+  //     const message = messageEl?.value || '';
+  //     if (name && email && message) {
+  //       alert('Thank you for your message! I will get back to you soon.');
+  //       contactForm.reset();
+  //     } else {
+  //       alert('Please fill in all fields.');
+  //     }
+  //   });
+  //   this.listeners.push(un);
+  // }
 
   // -------------------------
   // Fade-in on load
@@ -537,4 +539,28 @@ export class PortfolioPage {
       ],
     },
   ]);
+
+  sendEmail(e: Event) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_1n41ayt',
+        'template_meva6gb',
+        e.target as HTMLFormElement,
+        'RX3qZAFGfGk6gNVnt',
+      )
+      .then(
+        (result) => {
+          const form = e.target as HTMLFormElement;
+          form.reset();
+          console.log('Email sent!', result.text);
+          this.toastr.success('Email sent successfully!', 'Success');
+        },
+        (error) => {
+          console.log('Failed...', error.text);
+          this.toastr.error('Failed to send email.', 'Error');
+        },
+      );
+  }
 }

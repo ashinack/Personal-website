@@ -882,7 +882,7 @@ fa-icon {
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.1);
-  background-image: url('/signal.png');
+  /* background-image: url('/signal.png'); */
   background-size: cover;
   background-position: center;
 }
@@ -890,7 +890,7 @@ fa-icon {
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.1);
-  background-image: url('/micron.png');
+  /* background-image: url('/micron.png'); */
   background-size: cover;
   background-position: center;
 }

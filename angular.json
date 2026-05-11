@@ -88,6 +88,9 @@
               "node_modules/ngx-toastr/toastr.css" 
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

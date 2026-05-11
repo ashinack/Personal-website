@@ -488,7 +488,7 @@ export class PortfolioPage {
         window.open('https://ashinack.github.io/angular_weather/', '_blank');
         break;
       case 'calculator':
-        window.open('https://ashinack.github.io/angular_calculator/', '_blank');
+        window.open('https://ashinack.github.io/New-Calculator/', '_blank');
         break;
       case 'appleClone':
         window.open('https://ashinack.github.io/apple_clone/', '_blank');

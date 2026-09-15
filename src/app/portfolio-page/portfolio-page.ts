@@ -477,7 +477,7 @@ export class PortfolioPage {
 
   downloadResume() {
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
+    link.href = 'resume.pdf';
     link.download = 'My_Resume.pdf';
     link.click();
   }
